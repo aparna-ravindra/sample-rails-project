@@ -14,6 +14,9 @@ export default class App extends React.Component {
     return (
       <Router>
         <div>
+        <p align ='center'>
+        <h3>Student Registration Form</h3>
+        </p>
         <Link to="/">
               <br></br>
             <p align ="center">
