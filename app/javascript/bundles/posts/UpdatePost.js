@@ -10,8 +10,10 @@ export default class UpdatePost extends React.Component {
       fullname: '',
       description: ''
     }
+  
   }
 
+ 
   componentDidMount() {
     const { match: { params: { id } } } = this.props;
     fetch(`/api/v1/posts/${id}`).
@@ -29,37 +31,47 @@ export default class UpdatePost extends React.Component {
       body: JSON.stringify(this.state),
       headers: { 'Content-Type': 'application/json' },
     }).then((response) => {
-      alert('Student Information updated successfully');
-      location.href = '/';
+      alert('Student Updated successfully')
     });
   }
 
   render() {
     const {fullname, description} = this.state;
     return (
-      <div>
-        <h3>Update Information</h3>
+      <Container>
         <div>
-          <label>Fullname: </label>
-          <input
-            type='text'
-            name='fullname'
-            value={fullname}
-            onChange={this.handleInputChange}
-            />
-        </div>
-        <div>
-          <label>Description: </label>
-          <input
+          <h1 align='center'>Update Student</h1>
+          <form>
+            <div className="mb-3">
+              <label className="form-label">Full Name</label>
+              <input className="form-control"
+               type='text'
+               required="required"
+               name='fullname'
+               value={fullname}
+               onChange={this.handleInputChange}/>
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Description</label>
+              <textarea className="form-control"
             type='text'
             name='description'
             value={description}
             onChange={this.handleInputChange}
-            />
-        </div>
-        <button onClick={this.updatePostRequest}>Update</button>
-      </div>
+            >
+          </textarea>
+            </div>
+            <button onClick={this.updatePostRequest} className='btn btn-md btn-success' type="button">Update</button>
+         
+            
+          </form>
+          </div>
+         
+     
+      </Container>
+      
     );
+
   }
 }
 

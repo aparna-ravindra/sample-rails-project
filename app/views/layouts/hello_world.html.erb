@@ -6,11 +6,23 @@
 
     <%= stylesheet_pack_tag 'hello-world-bundle', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'hello-world-bundle', 'data-turbolinks-track': 'reload' %>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">  
   </head>
 
   <body>
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Student Registration Form</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       
+        <li class="nav-item">
+          <a class="nav-link" href="/posts/new">Add Student</a>
+        </li>
+        </ul>
+      </div>
+    </div>
+</nav>
     <%= yield %>
   </body>
 </html>

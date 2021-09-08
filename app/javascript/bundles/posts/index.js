@@ -53,28 +53,25 @@ export default class PostsList extends React.Component {
     return (
       <Container>
       <div>
-        <p align= 'center'>All Students </p>
+        <h1 align= 'center'>Students </h1>
 
         <div className='d-flex'>
-          <Link to="/posts/new">
-            <button className='btn btn-primary'>New Student</button>
-          </Link>
-
-          <DropdownButton id="dropdown-basic-button" title="Sort By Id" style={{marginLeft: '10px'}}>
+        
+          <DropdownButton id="dropdown-basic-button" 
+          size="sm"
+          title="Sort"
+          >
             <Dropdown.Item  onClick={() => {this.sortByIDAscending()}}>Ascending</Dropdown.Item>
             <Dropdown.Item  onClick={() => {this.sortByIDDescending()}}>Descending</Dropdown.Item>
+            <Dropdown.Item  onClick={() => {this.sortByName()}}>Name</Dropdown.Item>
           </DropdownButton>
-
-          <button style={{marginLeft: '10px'}} className='btn btn-primary' onClick={() => this.sortByName()}>Sort by Name</button>
-
         </div>
-        {/* <button style={{marginLeft: '20px'}} onClick={()=> this.fetchSortedPostsList()}>Sort by ID</button> */}
             
         <Table striped bordered hover className='mt-3'>
           <thead>
             <tr>
-              <th>ID</th>
-              <th> Fullname </th>
+              <th>Sr. no</th>
+              <th>Name</th>
               <th>Description</th>
               <th>Edit</th>
               <th>Delete</th>
@@ -87,16 +84,13 @@ export default class PostsList extends React.Component {
               return (
                 <tr key={post.id}>
                   <td>{post.id}</td>
-                  <td>
-
-                      {post.fullname}
-                 
+                  <td>{post.fullname}
                   </td>
                   <td>{post.description}</td>
                   <td>
                     <Link to={`/posts/${post.id}/edit`}>
 
-                     <button className='btn btn-info'> Edit </button>
+                     <button className='btn btn-warning'> Edit </button>
                     </Link>
                     </td>
                     <td>
