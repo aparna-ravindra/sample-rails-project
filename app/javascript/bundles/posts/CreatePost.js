@@ -48,6 +48,7 @@ export default class CreatePost extends React.Component {
               <label class="form-label">Description</label>
               <textarea class="form-control"
             type='text'
+            required="required"
             name='description'
             value={description}
             onChange={this.handleInputChange}
@@ -61,5 +62,6 @@ export default class CreatePost extends React.Component {
     );
   }
 }
+
 
 
